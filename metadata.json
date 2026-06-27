@@ -1,0 +1,6 @@
+{
+  "name": "MANIVTHA Tour & Travels",
+  "description": "Premium aviation-tier logistics and tour management cockpit for MANIVTHA Tour & Travels, engineered with iOS 27 Liquid Glass interactions.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

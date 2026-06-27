@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Custom aviation-cyber logistics color palette remapping */
+  --color-indigo-50: #f0fdf4;
+  --color-indigo-100: #dcfce7;
+  --color-indigo-200: #bbf7d0;
+  --color-indigo-300: #86efac;
+  --color-indigo-400: #4ade80;
+  --color-indigo-500: #10b981; /* Precise emerald-green */
+  --color-indigo-505: #10b981;
+  --color-indigo-550: #059669;
+  --color-indigo-555: #059669;
+  --color-indigo-600: #059669;
+  --color-indigo-650: #047857;
+  --color-indigo-750: #065f46;
+  --color-indigo-700: #047857;
+  --color-indigo-800: #065f46;
+  --color-indigo-900: #064e3b;
+  --color-indigo-950: #022c22;
+}
+
+/* Global Overrides for Liquid Smooth High-Contrast Typography */
+:root {
+  --bg-gradient-start: #040609;
+  --bg-gradient-via: #090d16;
+  --bg-gradient-end: #06080d;
+  --text-main-color: #f9f9fb;
+  --brand-primary: #10b981;
+  --brand-primary-light: rgba(16, 185, 129, 0.15);
+
+  --app-slate-950: #fcfcff;
+  --app-slate-900: #f9f9fb;
+  --app-slate-800: #f1f2f5;
+  --app-slate-700: #e5e7eb;
+  --app-slate-600: #cacbcd;
+  --app-slate-500: #9fa1a5;
+
+  --color-slate-950: var(--app-slate-950) !important;
+  --color-slate-900: var(--app-slate-900) !important;
+  --color-slate-800: var(--app-slate-800) !important;
+  --color-slate-700: var(--app-slate-700) !important;
+  --color-slate-600: var(--app-slate-600) !important;
+  --color-slate-500: var(--app-slate-500) !important;
+  
+  --color-gray-950: var(--app-slate-950) !important;
+  --color-gray-900: var(--app-slate-900) !important;
+  --color-gray-800: var(--app-slate-800) !important;
+  --color-gray-700: var(--app-slate-700) !important;
+  --color-gray-600: var(--app-slate-600) !important;
+  --color-gray-500: var(--app-slate-500) !important;
+}
+
+.dark {
+  --bg-gradient-start: #fafcfc;
+  --bg-gradient-via: #edf3f6;
+  --bg-gradient-end: #f4f7f9;
+  --text-main-color: #000000;
+  --brand-primary: #059669;
+  --brand-primary-light: rgba(5, 150, 105, 0.15);
+
+  --app-slate-50: #000000;
+  --app-slate-100: #050505;
+  --app-slate-200: #111111;
+  --app-slate-300: #1e1e1e;
+  --app-slate-400: #333333;
+  --app-slate-550: #444444;
+  --app-slate-600: #555555;
+
+  --color-slate-50: var(--app-slate-50) !important;
+  --color-slate-100: var(--app-slate-100) !important;
+  --color-slate-200: var(--app-slate-200) !important;
+  --color-slate-300: var(--app-slate-300) !important;
+  --color-slate-400: var(--app-slate-400) !important;
+  --color-slate-550: var(--app-slate-550) !important;
+  --color-slate-600: var(--app-slate-600) !important;
+  --color-slate-705: var(--app-slate-600) !important;
+  --color-slate-805: var(--app-slate-200) !important;
+
+  --color-gray-50: var(--app-slate-50) !important;
+  --color-gray-100: var(--app-slate-100) !important;
+  --color-gray-200: var(--app-slate-200) !important;
+  --color-gray-300: var(--app-slate-300) !important;
+  --color-gray-400: var(--app-slate-400) !important;
+  --color-gray-500: var(--app-slate-500) !important;
+
+  --color-white: var(--app-slate-100) !important; 
+}
+
+/* Reset default text element colors to ensure perfect coherence */
+body {
+  color: var(--text-main-color) !important;
+  background-color: var(--bg-gradient-start) !important;
+}
+
+.dark body {
+  color: var(--text-main-color) !important;
+  background-color: var(--bg-gradient-start) !important;
+}
+
+/* Tactical high-tech grid layer */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(5, 150, 105, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(5, 150, 105, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dark .grid-bg {
+  background-image: 
+    linear-gradient(rgba(16, 185, 129, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.035) 1px, transparent 1px);
+}
+
+/* iOS 27 Liquid Glass Visual Theme Styling rules with green hues */
+.bento-glass {
+  background: var(--card-background, rgba(255, 255, 255, 0.55)) !important;
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid color-mix(in srgb, var(--color-indigo-500, #10b981) 15%, transparent);
+  box-shadow: 0 12px 40px 0 color-mix(in srgb, var(--color-indigo-500, #10b981) 4%, transparent);
+}
+
+.dark .bento-glass {
+  background: var(--card-background, rgba(11, 14, 21, 0.5)) !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid color-mix(in srgb, var(--color-indigo-400, #4ade80) 10%, transparent);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Animations at 60fps */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 16s linear infinite;
+}
+
+/* Decorative modern glows */
+.glow-accent {
+  filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.25));
+}
+
+/* Custom Scrollbar styled dynamically */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.15);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.35);
+}
+
+/* ==========================================
+   Liquid Glass Morphing Backgrounds & Effects
+   ========================================== */
+
+@keyframes liquid-morph-1 {
+  0%, 100% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  33% {
+    border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+    transform: translate(60px, -80px) scale(1.15) rotate(120deg);
+  }
+  66% {
+    border-radius: 50% 50% 30% 70% / 50% 60% 40% 60%;
+    transform: translate(-40px, 60px) scale(0.9) rotate(240deg);
+  }
+}
+
+@keyframes liquid-morph-2 {
+  0%, 100% {
+    border-radius: 51% 49% 30% 70% / 50% 60% 40% 60%;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    border-radius: 30% 70% 70% 30% / 50% 30% 70% 50%;
+    transform: translate(-70px, -50px) scale(1.2) rotate(-180deg);
+  }
+}
+
+@keyframes liquid-morph-3 {
+  0%, 100% {
+    border-radius: 60% 40% 60% 40% / 40% 60% 45% 55%;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    border-radius: 35% 65% 30% 70% / 65% 35% 70% 30%;
+    transform: translate(60px, 60px) scale(0.85) rotate(180deg);
+  }
+}
+
+.animate-liquid-1 {
+  animation: liquid-morph-1 22s ease-in-out infinite;
+}
+
+.animate-liquid-2 {
+  animation: liquid-morph-2 28s ease-in-out infinite;
+}
+
+.animate-liquid-3 {
+  animation: liquid-morph-3 20s ease-in-out infinite;
+}
+
+/* Glass shine animation overlay */
+@keyframes shine-flow {
+  0% {
+    transform: translateX(-150%) skewX(-15deg);
+  }
+  50%, 100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.glass-shine-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-shine-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: translateX(-150%) skewX(-15deg);
+  animation: shine-flow 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.dark .glass-shine-btn::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+}
+
+/* Floating animation */
+@keyframes glass-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+.animate-glass-float {
+  animation: glass-float 5s ease-in-out infinite;
+}
+
+/* Glass card shine on hover */
+.bento-glass-enhanced {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.bento-glass-enhanced::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.bento-glass-enhanced:hover::before {
+  opacity: 1;
+}
+
+.bento-glass-enhanced:hover {
+  transform: translateY(-4px) scale(1.015) !important;
+  box-shadow: 0 20px 40px -5px color-mix(in srgb, var(--brand-primary, #10b981) 14%, transparent),
+              inset 0 0 14px 2px color-mix(in srgb, var(--brand-primary, #10b981) 10%, transparent) !important;
+  border-color: color-mix(in srgb, var(--brand-primary, #10b981) 35%, transparent) !important;
+}
+
+/* Moving RGB liquid light border */
+@keyframes liquid-border {
+  0%, 100% {
+    border-color: color-mix(in srgb, var(--brand-primary, #10b981) 20%, transparent);
+    box-shadow: 0 12px 40px 0 color-mix(in srgb, var(--brand-primary, #10b981) 4%, transparent);
+  }
+  50% {
+    border-color: color-mix(in srgb, var(--brand-primary, #10b981) 70%, transparent);
+    box-shadow: 0 12px 40px 0 color-mix(in srgb, var(--brand-primary, #10b981) 12%, transparent),
+                0 0 15px 1px color-mix(in srgb, var(--brand-primary, #10b981) 20%, transparent);
+  }
+}
+
+.liquid-border-pulse {
+  animation: liquid-border 4s ease-in-out infinite;
+}
+
+/* ==========================================
+   Refractive Glare Sweep & Floating Animations
+   ========================================== */
+
+@keyframes glare-sweep {
+  0% {
+    left: -150%;
+  }
+  40% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.liquid-glass-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 20%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.08) 80%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: glare-sweep 8s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Specific interactive soft reflection on hover */
+.liquid-glass-glow:hover::after {
+  animation-duration: 4s; /* Sweeps faster on hover to acknowledge user interaction */
+  opacity: 1;
+}
+
+/* Liquid glass light transmission sweep specifically tuned for header/footer navbars */
+@keyframes navbar-sheen {
+  0% {
+    transform: translateX(-100%) rotate(5deg);
+  }
+  50%, 100% {
+    transform: translateX(250%) rotate(5deg);
+  }
+}
+
+.liquid-navbar-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-navbar-sheen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(34, 211, 238, 0.04) 30%,
+    rgba(34, 211, 238, 0.12) 50%,
+    rgba(16, 185, 129, 0.08) 70%,
+    transparent 100%
+  );
+  transform: translateX(-100%) rotate(5deg);
+  animation: navbar-sheen 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dynamic glass micro grid-lines pulse */
+@keyframes glass-grid-pulse {
+  0%, 100% {
+    opacity: 0.15;
+    background-size: 32px 32px;
+  }
+  50% {
+    opacity: 0.25;
+    background-size: 36px 36px;
+  }
+}
+
+.glass-grid-pulse-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  animation: glass-grid-pulse 12s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
